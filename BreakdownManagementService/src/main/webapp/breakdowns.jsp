@@ -49,7 +49,7 @@
 			<div id="alertError" class="alert alert-danger"></div>
 			<br>
 			
-			<div id="divItemsGrid">
+			<div id="divBreakdownsGrid">
 				<%
 					BreakDown breakdownObj = new BreakDown();
 					out.print(breakdownObj.readBreakdowns());
