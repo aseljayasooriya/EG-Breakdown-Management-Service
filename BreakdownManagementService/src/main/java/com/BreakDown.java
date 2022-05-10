@@ -77,12 +77,13 @@ public class BreakDown {
 			preparedStmt.execute();
 			con.close();
 
-			output = "Inserted successfully";
+			String newBreakdowns = readBreakdowns();
+			output = "{\"status\":\"success\", \"data\": \"" + newBreakdowns + "\"}";
 
 		}
 		catch (Exception e) {
-			output = "Error while inserting the breakdown info.";
-			System.err.println(e.getMessage());
+			output = "{\"status\":\"error\", \"data\":\"Error while inserting the breakdown.\"}";
+			System.err.println(e.getMessage()); 
 		}
 
 		return output;
@@ -131,11 +132,8 @@ public class BreakDown {
 				output += "<td>" + affectedUsers + "</td>";
 
 				//buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-						 + "<td><form method='post' action='breakdowns.jsp'>"
-						 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-						 + "<input name='breakdownID' type='hidden' value='" + breakdownID
-						 + "'>" + "</form></td></tr>";
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary' data-itemid='" + breakdownID + "'></td>"
+						 + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + breakdownID + "'></td></tr>";
 			}
 
 			con.close();
@@ -180,10 +178,11 @@ public class BreakDown {
 			preparedStmt.execute();
 			con.close();
 
-			output = "Updated successfully.";
+			String newBreakdowns = readBreakdowns();
+			output = "{\"status\":\"success\", \"data\": \"" + newBreakdowns + "\"}"; 
 		}
 		catch (Exception e) {
-			output = "Error while updating the breakdown info.";
+			output = "{\"status\":\"error\", \"data\": \"Error while updating the breakdown.\"}";
 			System.err.println(e.getMessage());
 		}
 
@@ -213,11 +212,12 @@ public class BreakDown {
 			preparedStmt.execute();
 			con.close();
 
-			output = "Deleted successfully";
+			String newBreakdowns = readBreakdowns();
+			output = "{\"status\":\"success\", \"data\": \"" + newBreakdowns + "\"}";
 
 		}
 		catch(Exception e) {
-			output = "Error while deleting the breakdown info.";
+			output = "{\"status\":\"error\", \"data\": \"Error while deleting the breakdown.\"}";
 			System.err.println(e.getMessage());
 		}
 
@@ -275,11 +275,8 @@ public String readSectorBreakdowns(String bSector) {
 				output += "<td>" + affectedUsers + "</td>";
 
 				//buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-						 + "<td><form method='post' action='breakdowns.jsp'>"
-						 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-						 + "<input name='breakdownID' type='hidden' value='" + breakdownID
-						 + "'>" + "</form></td></tr>";
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary' data-itemid='" + breakdownID + "'></td>"
+						 + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + breakdownID + "'></td></tr>";
 			}
 
 			con.close();
