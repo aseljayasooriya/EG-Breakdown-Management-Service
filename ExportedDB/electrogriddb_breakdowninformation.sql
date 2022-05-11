@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `breakdowninformation`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `breakdowninformation` (
   `breakdownID` int NOT NULL AUTO_INCREMENT,
-  `breakdownSector` varchar(1) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `breakdownDate` date NOT NULL,
-  `startTime` time NOT NULL,
-  `endTime` time NOT NULL,
-  `breakdownType` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `breakdownSector` varchar(1) NOT NULL,
+  `breakdownDate` varchar(50) NOT NULL,
+  `startTime` varchar(50) NOT NULL,
+  `endTime` varchar(50) NOT NULL,
+  `breakdownType` varchar(50) NOT NULL,
   `affectedUsers` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`breakdownID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -43,4 +43,4 @@ CREATE TABLE `breakdowninformation` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-25  2:59:30
+-- Dump completed on 2022-05-11 16:41:28
