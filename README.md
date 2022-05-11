@@ -1,7 +1,7 @@
 # Electro Grid Breakdown Management Service
 This is the front end implementation of the Breakdown Management Service of the Electro-Grid system.
 
-## prerequisites
+## Prerequisites
 Visit the following link and clone the repo to execute the User Management Service (as there is an inter-service communication between the services)
 before running front end implementation of the Breakdown Management Service. All the exported data bases have been provided.
 
