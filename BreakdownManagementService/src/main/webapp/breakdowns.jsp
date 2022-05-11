@@ -1,4 +1,4 @@
-<%@page import="com.BreakDown"%>
+<%@ page import="com.BreakDown"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="col-6">
 		
-			<h3>Breakdown Management</h3>
+			<h3 style="text-align:center" >Breakdown Management</h3>
 			
 			<form id="formBreakdown" name="formBreakdown">
 				Breakdown Sector: 
@@ -39,25 +39,35 @@
 				<input id="breakdownType" name="breakdownType" type="text" class="form-control form-control-sm">
 				<br>
 						
-				<input id="btnSave" name="btnSave" type="button" value="Insert" class="btn btn-primary">
+				<input id="btnSave" name="btnSave" type="button" value="Insert" class="btn btn-warning btn-block">
 						
 				<input type="hidden" id="hidBreakdownIDSave" name="hidBreakdownIDSave" value="">				
 			</form>
-			
-			<br>		
+		</div>
+	 </div>
+	 
+	 <br>
+	 
+	 <div class="row">
+	 	<div class="col-8">			
 			<div id="alertSuccess" class="alert alert-success"></div>
 			<div id="alertError" class="alert alert-danger"></div>
-			<br>
-			
+		</div>	
+	 </div>
+	 
+	 <br>
+	 
+	 <div class="row">
+	 	<div class="col-12">	
 			<div id="divBreakdownsGrid">
 				<%
 					BreakDown breakdownObj = new BreakDown();
 					out.print(breakdownObj.readBreakdowns());
 				%>
 			</div>					
-		
 		</div>
 	</div>
+		
 </div>
 
 </body>

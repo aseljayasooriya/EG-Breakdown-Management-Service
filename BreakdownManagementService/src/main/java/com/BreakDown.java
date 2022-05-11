@@ -102,7 +102,8 @@ public class BreakDown {
 			}
 
 			//Prepare the html table to be displayed
-			output = "<table border='0'><tr><th>Breakdown Sector</th><th>Breakdown Date</th>" +
+			output = "<table class='table table-hover'>" + 
+					 "<tr><th>Breakdown Sector</th><th>Breakdown Date</th>" +
 					 "<th>Breakdown Start Time</th>" +
 					 "<th>Breakdown End Time</th>" +
 					 "<th>Breakdown Type</th>" +
@@ -132,7 +133,7 @@ public class BreakDown {
 				output += "<td>" + affectedUsers + "</td>";
 
 				//buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary' data-breakdownid='" + breakdownID + "'></td>"
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-warning' data-breakdownid='" + breakdownID + "'></td>"
 						 + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-breakdownid='" + breakdownID + "'></td></tr>";
 			}
 
