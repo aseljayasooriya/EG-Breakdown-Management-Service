@@ -12,11 +12,30 @@
 </head>
 <body>
 
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning">
+  <a class="navbar-brand" href="#">
+    <img src="EGLogo.png" width="25" height="30" class="d-inline-block align-top" alt="">
+    Electro Grid
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">Home</a>
+      <a class="nav-item nav-link active" href="breakdowns.jsp">Breakdown Information</a>
+      <a class="nav-item nav-link" href="#">Profile</a>
+    </div>
+  </div>
+</nav>
+
+<br>
+
 <div class="container">
 	<div class="row">
 		<div class="col-6">
 		
-			<h3 style="text-align:center" >Breakdown Management</h3>
+			<h3 style="text-align:center">Breakdown Management</h3>
 			
 			<form id="formBreakdown" name="formBreakdown">
 				Breakdown Sector: 

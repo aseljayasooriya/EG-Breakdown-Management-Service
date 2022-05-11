@@ -22,7 +22,7 @@ public class BreakDown {
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			System.err.println(e.getMessage()); 
 		}
 
 		return con;
@@ -175,7 +175,6 @@ public class BreakDown {
 			preparedStmt.setString(5, type);
 			preparedStmt.setInt(6, Integer.parseInt(ID));
 
-			System.out.print(ID+" "+sector+" "+date+" "+sTime+" "+eTime+" "+type);
 			//execute the statement
 			preparedStmt.execute();
 			con.close();
