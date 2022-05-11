@@ -67,9 +67,9 @@ public class BreakDown {
 			//binding the values
 			preparedStmt.setInt(1, 0);
 			preparedStmt.setString(2, bsector);
-			preparedStmt.setDate(3, Date.valueOf(bdate));
-			preparedStmt.setTime(4, Time.valueOf(sTime));
-			preparedStmt.setTime(5, Time.valueOf(eTime));
+			preparedStmt.setString(3, bdate);
+			preparedStmt.setString(4, sTime);
+			preparedStmt.setString(5, eTime);
 			preparedStmt.setString(6, btype);
 			preparedStmt.setInt(7, userCount);
 
@@ -102,7 +102,7 @@ public class BreakDown {
 			}
 
 			//Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Breakdown Sector</th><th>Breakdown Date</th>" +
+			output = "<table border='0'><tr><th>Breakdown Sector</th><th>Breakdown Date</th>" +
 					 "<th>Breakdown Start Time</th>" +
 					 "<th>Breakdown End Time</th>" +
 					 "<th>Breakdown Type</th>" +
@@ -132,8 +132,8 @@ public class BreakDown {
 				output += "<td>" + affectedUsers + "</td>";
 
 				//buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary' data-itemid='" + breakdownID + "'></td>"
-						 + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + breakdownID + "'></td></tr>";
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary' data-breakdownid='" + breakdownID + "'></td>"
+						 + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-breakdownid='" + breakdownID + "'></td></tr>";
 			}
 
 			con.close();
@@ -163,17 +163,18 @@ public class BreakDown {
 
 			//create the prepared statement
 			String query = "UPDATE breakdowninformation SET breakdownSector=?,breakdownDate=?,startTime=?,endTime=?,breakdownType=? WHERE breakdownID=?";
-
+			
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-
+			
 			//binding values
 			preparedStmt.setString(1, sector);
-			preparedStmt.setDate(2, Date.valueOf(date));
-			preparedStmt.setTime(3, Time.valueOf(sTime));
-			preparedStmt.setTime(4, Time.valueOf(eTime));
+			preparedStmt.setString(2, date);
+			preparedStmt.setString(3, sTime);
+			preparedStmt.setString(4, eTime);
 			preparedStmt.setString(5, type);
 			preparedStmt.setInt(6, Integer.parseInt(ID));
 
+			System.out.print(ID+" "+sector+" "+date+" "+sTime+" "+eTime+" "+type);
 			//execute the statement
 			preparedStmt.execute();
 			con.close();

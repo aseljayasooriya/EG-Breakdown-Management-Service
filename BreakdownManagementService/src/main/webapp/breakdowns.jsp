@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="col-6">
 		
-			<h1>Breakdown Management</h1>
+			<h3>Breakdown Management</h3>
 			
 			<form id="formBreakdown" name="formBreakdown">
 				Breakdown Sector: 
@@ -39,7 +39,7 @@
 				<input id="breakdownType" name="breakdownType" type="text" class="form-control form-control-sm">
 				<br>
 						
-				<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
+				<input id="btnSave" name="btnSave" type="button" value="Insert" class="btn btn-primary">
 						
 				<input type="hidden" id="hidBreakdownIDSave" name="hidBreakdownIDSave" value="">				
 			</form>
