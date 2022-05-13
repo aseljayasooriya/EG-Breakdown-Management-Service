@@ -153,6 +153,9 @@ public class BreakDown {
 	public String updateBreakdown(String ID, String sector, String date, String sTime, String eTime, String type) {
 
 		String output = "";
+		String decodeSTime = java.net.URLDecoder.decode(sTime);
+		String decodeETime = java.net.URLDecoder.decode(eTime);
+		String decodeType = java.net.URLDecoder.decode(type);
 
 		try {
 
@@ -170,9 +173,9 @@ public class BreakDown {
 			//binding values
 			preparedStmt.setString(1, sector);
 			preparedStmt.setString(2, date);
-			preparedStmt.setString(3, sTime);
-			preparedStmt.setString(4, eTime);
-			preparedStmt.setString(5, type);
+			preparedStmt.setString(3, decodeSTime);
+			preparedStmt.setString(4, decodeETime);
+			preparedStmt.setString(5, decodeType);
 			preparedStmt.setInt(6, Integer.parseInt(ID));
 
 			//execute the statement

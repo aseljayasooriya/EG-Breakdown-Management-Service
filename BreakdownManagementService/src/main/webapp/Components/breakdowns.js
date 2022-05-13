@@ -48,9 +48,9 @@ $(document).on("click", ".btnUpdate", function(event)
 	$("#hidBreakdownIDSave").val($(this).data("breakdownid")); 	
 	$("#breakdownSector").val($(this).closest("tr").find('td:eq(0)').text());
 	$("#breakdownDate").val($(this).closest("tr").find('td:eq(1)').text());
-	$("#breakdownSTime").val($(this).closest("tr").find('td:eq(2)').text());
-	$("#breakdownETime").val($(this).closest("tr").find('td:eq(3)').text());
-	$("#breakdownType").val($(this).closest("tr").find('td:eq(4)').text()); 
+	$("#breakdownSTime").val((decodeURI($(this).closest("tr").find('td:eq(2)').text())));
+	$("#breakdownETime").val((decodeURI($(this).closest("tr").find('td:eq(3)').text())));
+	$("#breakdownType").val((decodeURI($(this).closest("tr").find('td:eq(4)').text()))); 
 });
 
 //DELETE----------------------------------------------
